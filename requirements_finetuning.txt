@@ -1,0 +1,24 @@
+# Fine-Tuning Requirements
+# Additional dependencies for model fine-tuning and evaluation
+
+# Core ML frameworks
+torch>=2.0.0
+torchvision>=0.15.0
+transformers>=4.30.0
+
+# Data processing
+pillow>=10.0.0
+numpy>=1.24.0
+scikit-learn>=1.3.0
+
+# Visualization
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Training utilities
+tensorboard>=2.13.0
+tqdm>=4.65.0
+
+# Optional: For better performance
+# accelerate>=0.20.0  # For distributed training
+# datasets>=2.14.0    # For dataset management

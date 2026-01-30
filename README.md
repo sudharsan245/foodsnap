@@ -6,6 +6,31 @@ A production-ready Python system to detect AI-generated food images using the **
 
 In food delivery applications, users sometimes submit false claims with AI-generated images (e.g., food with fake contaminants) to get fraudulent refunds. This system automatically detects whether a submitted image is AI-generated or real.
 
+## 🔬 Food-Specific Fine-Tuning (NEW!)
+
+The base SMOGY model can be **fine-tuned for food-specific AI detection** to improve accuracy on food images and handle real contamination cases.
+
+**Key Features:**
+- ✅ **3-Class Classification**: Real Clean, Real Contaminated, AI-Generated
+- ✅ **Domain Adaptation**: Preserves AI detection knowledge while learning food-specific features
+- ✅ **Robust to Real-World Conditions**: Heavy augmentation for WhatsApp compression, screenshots, low-light
+- ✅ **Low False Positives**: Prioritizes not rejecting legitimate customer complaints (<5% FPR target)
+
+**Quick Start:**
+```bash
+# Interactive setup
+python quickstart_finetuning.py
+
+# Or manual workflow
+python inspect_model.py --all          # Phase 1: Inspect model
+python finetune.py --data_dir ./data   # Phase 3: Train
+python evaluate.py --model_path ./checkpoints/best_model.pth --data_dir ./test_data
+```
+
+**📚 See [FINETUNING_GUIDE.md](FINETUNING_GUIDE.md) for complete instructions**
+
+**📋 See [DOMAIN_ADAPTATION_PLAN.md](DOMAIN_ADAPTATION_PLAN.md) for technical strategy**
+
 ## 📦 Installation
 
 ### Requirements
